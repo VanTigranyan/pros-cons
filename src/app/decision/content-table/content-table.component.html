@@ -1,0 +1,34 @@
+<section>
+  <div class="content-head">
+    <div class="pros" *ngIf="pros">
+      <h6>
+        Pros
+      </h6>
+      <ol>
+        <li *ngFor="let pro of pros; let idx=index">
+          {{ pro }}
+        </li>
+      </ol>
+      <div>
+        <input type="text" #proInput>
+        <button type="submit" (submit)="addValue.emit({type: 'pro', value: proInput.value})">
+          Add Pro
+        </button>
+      </div>
+    </div>
+    <div class="cons" *ngIf="cons">
+      <h6>
+        Cons
+      </h6>
+      <ol>
+        <li *ngFor="let con of cons; let i=index">
+          {{ con }}
+        </li>
+      </ol>
+      <form>
+        <input type="text">
+        <button type="submit">Add Con</button>
+      </form>
+    </div>
+  </div>
+</section>

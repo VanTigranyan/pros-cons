@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+  <span>Pros & Cons</span>
+</mat-toolbar>
+<h3>Should I do this?!</h3>
+<app-content-table
+  (addValue)="addValue($event.type, $event.value)"
+  (removeValue)="removeValue($event.type, $event.idx)"
+  (updateValue)="updateValue($event.type, $event.idx, $event.value)"
+  [cons]="cons"
+  [pros]="pros">
+</app-content-table>
+
